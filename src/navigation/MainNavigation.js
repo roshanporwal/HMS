@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 export default function MainNavigation(props) {
   return (
     <NavigationContainer style={styles.mainContainer}>
-      <Stack.Navigator initialRouteName="LandingScreen">
+      <Stack.Navigator initialRouteName="LoginScreen">
         {screens.map(scr => {
           return (
             <Stack.Screen
