@@ -13,7 +13,7 @@ export default function BottomTabsNavigation(props) {
   return (
     <Tab.Navigator
      initialRouteName="EnquiryScreen"
-     labeled={true}
+     labeled={false}
      shifting={true}
      barStyle={{ backgroundColor: 'white', height:120, justifyContent:'center', alignItems:'center'}}
     >
