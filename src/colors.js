@@ -10,4 +10,5 @@ export const colors = {
   red:'#EB5757',
   placeholder:'#cccccc',
   input:'#666666',
+  darkGreen:'#247360'
 };
