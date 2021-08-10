@@ -122,7 +122,7 @@ export default function Appointments() {
         <View style={styles.container}>
             <View style={styles.subCont1}>
                 <Text style={styles.enquiryTxt}>Appointments</Text>
-                {/* <Text style={styles.enquiryTxt}>July 29, 2021</Text> */}
+                <Text style={styles.enquiryTxtt}>July 29, 2021</Text>
                 <InputField style={styles.InputField}
                 placeholder="Search"
                 placeholderTextColor="black" />
@@ -176,10 +176,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     InputField: {
-        width: 250,
+        width: 300,
         height: 40,
         backgroundColor: colors.lightGrey
-
     },
     firstContTxt: {
         color: colors.white,
@@ -202,6 +201,10 @@ const styles = StyleSheet.create({
     entryTxt:{
         //width:150
         fontSize:18
+    },
+    enquiryTxtt:{
+        fontSize:16,
+        fontWeight:'bold',
     },
     viewbox:{
         //backgroundColor:'red',

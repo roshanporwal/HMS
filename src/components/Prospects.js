@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     InputField: {
-        width: 250,
+        width: 300,
         height: 40,
         backgroundColor: colors.lightGrey
 
