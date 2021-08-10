@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, TextInput, Image } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Platform, KeyboardAvoidingView, Image } from 'react-native';
 import InputField from '../components/InputField';
 import AppButton from '../components/AppButton';
 import { colors } from '../colors';
@@ -16,6 +16,10 @@ function LoginScreen (props)  {
     const {navigation} = props;
     return (
         <View style={styles.conatiner}>
+            <KeyboardAvoidingView style={styles.conatiner}
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            //keyboardVerticalOffset={300}
+            >
             <Image source={require('../assets/logo.png')}/>
             <Text style={styles.headerTxt}>Hospital Management System</Text>
             <View style={styles.PlaceHolder}/>
@@ -40,6 +44,7 @@ function LoginScreen (props)  {
                 <InputField style={styles.button} label="Password"/>
                 <AppButton style={styles.appBtn} textStyle={styles.textStyle} title="Login" onPress={()=>navigation.navigate('TabsScreen')}/>
             </View>
+            </KeyboardAvoidingView>
         </View>
     )
 }
@@ -86,12 +91,11 @@ const styles = StyleSheet.create({
         fontSize:48,
         fontWeight:'bold',
         color:colors.white,
-        marginVertical:50,
+        marginVertical:20,
     },
     pickCont:{
         width:450,
         //backgroundColor:'green',
-
     },
     pickText:{
         fontSize:24,

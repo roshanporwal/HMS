@@ -36,8 +36,8 @@ const styles = StyleSheet.create({
   },
   label:{
     color:colors.white,
-    marginHorizontal:5,
-    marginVertical:2,
+    marginHorizontal:10,
+    //marginVertical:2,
     fontSize:24
   },
   hide:{
