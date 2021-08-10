@@ -17,6 +17,7 @@ const ENQUIRIES_FIELDS = [
 const DATA = [
     {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+        sl:1,
         drname:'Dr. Ashwin Porwal',
         name: 'Ganesh Prasad Sankhua',
         num: 9382887340,
@@ -26,6 +27,7 @@ const DATA = [
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+        sl:2,
         drname:'Dr. Ashwin Porwal',
         name: 'Ganesh Prasad Sankhua',
         num: 9382887340,
@@ -35,6 +37,7 @@ const DATA = [
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f64',
+        sl:3,
         drname:'Dr. Ashwin Porwal',
         name: 'Ganesh Prasad Sankhua',
         num: 9382887340,
@@ -44,6 +47,7 @@ const DATA = [
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f65',
+        sl:4,
         drname:'Dr. Ashwin Porwal',
         name: 'Ganesh Prasad Sankhua',
         num: 9382887340,
@@ -53,6 +57,7 @@ const DATA = [
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f66',
+        sl:5,
         drname:'Dr. Ashwin Porwal',
         name: 'Ganesh Prasad Sankhua',
         num: 9382887340,
@@ -62,6 +67,7 @@ const DATA = [
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f67',
+        sl:6,
         drname:'Dr. Ashwin Porwal',
         name: 'Ganesh Prasad Sankhua',
         num: 9382887340,
@@ -71,6 +77,7 @@ const DATA = [
     },
     {
         id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f68',
+        sl:7,
         drname:'Dr. Ashwin Porwal',
         name: 'Ganesh Prasad Sankhua',
         num: 9382887340,
@@ -83,6 +90,12 @@ const DATA = [
 
 const renderItem = ({ item }) => (
     <View style={styles.item}>
+        <View style={styles.viewbox}>
+        <Text style={styles.entryTxt}>{item.sl}</Text>
+        </View>
+        <View style={styles.viewbox}>
+        <Text style={styles.entryTxt}>{item.date}</Text>
+        </View>
         <View style={styles.viewbox}>
         <Text style={styles.entryTxt}>{item.drname}</Text>
         </View>
