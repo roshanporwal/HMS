@@ -1,5 +1,5 @@
 import React , { useState, useEffect }from 'react';
-import { View, Image, Text,Keyboard, TouchableOpacity } from 'react-native';
+import { View, Image, Text,Keyboard, TouchableOpacity, StyleSheet } from 'react-native';
 import BottomTabsNavigation from '../navigation/BottomTabsNavigation';
 import EnquiryScreen from '../screens/EnquiryScreen'
 import { colors } from '../colors';
@@ -89,12 +89,43 @@ const TAB_SCREENS = [
 ];
 
 export default function TabsScreen() {
+  useEffect(() => {
+    Keyboard.addListener("keyboardDidShow", _keyboardDidShow);
+    Keyboard.addListener("keyboardDidHide", _keyboardDidHide);
+
+    // cleanup function
+    return () => {
+      Keyboard.removeListener("keyboardDidShow", _keyboardDidShow);
+      Keyboard.removeListener("keyboardDidHide", _keyboardDidHide);
+    };
+  }, []);
+
+  const [keyboardStatus, setKeyboardStatus] = useState(false);
+  const _keyboardDidShow = () => setKeyboardStatus(true);
+  const _keyboardDidHide = () => setKeyboardStatus(false);
   return (
     <View style={{flex:1}}>
   <BottomTabsNavigation screens={TAB_SCREENS} />
-  <Image style={{position:'absolute', bottom:10, left:20}} source={require('../assets/logo2.png')}/>
-  <TouchableOpacity onPress={()=>alert('logged out')} style={{position:'absolute', bottom:5, right:20}}>
+  <Image style={(keyboardStatus) ? styles.hide:styles.logo} source={require('../assets/logo2.png')}/>
+  <TouchableOpacity onPress={()=>alert('logged out')} style={(keyboardStatus) ? styles.hide:styles.logout}>
   <Image source={require('../assets/logout.png')}/>
   </TouchableOpacity>
   </View>)
 }
+
+
+const styles=StyleSheet.create({
+  hide:{
+    display:'none'
+  },
+  logo:{
+   position:'absolute',
+   bottom:10,
+   left:20
+},
+logout:{
+ position:'absolute',
+ bottom:5,
+ right:20
+}
+})
