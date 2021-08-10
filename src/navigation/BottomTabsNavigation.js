@@ -15,7 +15,7 @@ export default function BottomTabsNavigation(props) {
      initialRouteName="EnquiryScreen"
      labeled={false}
      shifting={true}
-     barStyle={{ backgroundColor: 'white', height:120, justifyContent:'center', alignItems:'center'}}
+     barStyle={{ backgroundColor: 'white', height:110, justifyContent:'center', alignItems:'center'}}
     >
       {props.screens.map(scr => (
         <Tab.Screen {...scr} key={scr.name}

@@ -170,7 +170,8 @@ const styles = StyleSheet.create({
         borderRadius:15,
         alignItems:'center',
         justifyContent:'space-evenly',
-        margin:3
+        margin:3,
+        paddingVertical:5
     },
     entryTxt:{
         //width:150

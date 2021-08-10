@@ -4,23 +4,31 @@ import { colors } from '../colors';
 import Enquiries from '../components/Enquiries';
 import Prospects from '../components/Prospects';
 import Appointments from '../components/Appointments';
+import CalendarPicker from 'react-native-calendar-picker';
 function EnquiryScreen() {
     return (
         <View style={styles.conatiner}>
             <View style={styles.conatiner1}>
                 <View style={styles.firstCont}>
-                    <Enquiries/>
+                    <Enquiries />
                 </View>
                 <View style={styles.secondCont}>
-                <Prospects/>
+                    <Prospects />
                 </View>
             </View>
             <View style={styles.conatiner2}>
                 <View style={styles.thirdCont}>
-                <Appointments/>
+                    <Appointments />
                 </View>
                 <View style={styles.fourthCont}>
-
+                    <CalendarPicker
+                        //onDateChange={this.onDateChange}
+                         width={400}
+                         //scrollable={true}
+                         height={400}
+                         selectedDayTextColor={"white"}
+                         selectedDayStyle={{backgroundColor:"#247360"}}
+                    />
                 </View>
             </View>
         </View>
@@ -32,7 +40,9 @@ const styles = StyleSheet.create({
     conatiner: {
         flex: 1,
         backgroundColor: colors.white,
-        padding: 30
+        paddingLeft: 20,
+        paddingRight:20,
+        paddingTop:10,
     },
     firstCont: {
         //backgroundColor: 'red',
