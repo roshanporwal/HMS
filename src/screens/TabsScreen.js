@@ -41,7 +41,7 @@ const TAB_SCREENS = [
         tabBarIcon: ({ focused, size }) => (
           <View style={{marginBottom:30}}>
             <Image source={require('../assets/bottom1.png')}
-              style={{ height:focused ? 60 : 40, width: focused ? 60 : 40}}
+              //style={{ height:focused ? 60 : 40, width: focused ? 60 : 40}}
             />
           </View>
         ),
@@ -52,9 +52,11 @@ const TAB_SCREENS = [
     component: OpdScreen,
     options: {
         tabBarIcon: ({ focused , size}) => (
-          <View>
+          <View style={{zIndex:10, overflow:'visible', elevation:0}}>
             <Image source={require('../assets/bottom2.png')}
-              style={{ height:focused ? 60 : 40, width: focused ? 60 : 40}}
+              //style={{ height:focused ? 60 : 40, width: focused ? 60 : 40}}
+              style={{zIndex:10, overflow:'visible',}}
+              size={size}
             />
           </View>
         ),
@@ -67,7 +69,7 @@ const TAB_SCREENS = [
         tabBarIcon: ({ focused }) => (
           <View>
             <Image source={require('../assets/bottom3.png')}
-              style={{ height:focused ? 60 : 40, width: focused ? 60 : 40}}
+              //style={{ height:focused ? 60 : 40, width: focused ? 60 : 40}}
             />
           </View>
         ),
@@ -80,7 +82,7 @@ const TAB_SCREENS = [
         tabBarIcon: ({ focused }) => (
           <View>
             <Image source={require('../assets/bottom4.png')}
-              style={{ height:focused ? 60 : 40, width: focused ? 60 : 40}}
+              //style={{ height:focused ? 60 : 40, width: focused ? 60 : 40}}
             />
           </View>
         ),
