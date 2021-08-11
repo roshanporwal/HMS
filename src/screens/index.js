@@ -3,6 +3,7 @@ import LandingScreen from './LandingScreen';
 import SignupScreen from './SignupScreen';
 import LoginScreen from './LoginScreen';
 import TabsScreen from './TabsScreen';
+import OpdScreen from './OpdScreen';
 const SCREEN_OPTIONS_EXTERNAL = {
   title: '',
   headerBackTitle: ' ',
@@ -38,6 +39,11 @@ export default [
   {
     name: 'SignupScreen',
     component: SignupScreen,
+    options: { headerShown: false },
+  },
+  {
+    name: 'OpdScreen',
+    component: OpdScreen,
     options: { headerShown: false },
   },
 

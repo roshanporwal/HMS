@@ -1,7 +1,8 @@
 import React , { useState, useEffect }from 'react';
 import { View, Image, Text,Keyboard, TouchableOpacity, StyleSheet } from 'react-native';
 import BottomTabsNavigation from '../navigation/BottomTabsNavigation';
-import EnquiryScreen from '../screens/EnquiryScreen'
+import EnquiryScreen from '../screens/EnquiryScreen';
+import OpdScreen from '../screens/OpdScreen';
 import { colors } from '../colors';
 
 function screen1(){
@@ -47,8 +48,8 @@ const TAB_SCREENS = [
       }
   },
   {
-    name: 'screen2',
-    component: screen2,
+    name: 'OpdScreen',
+    component: OpdScreen,
     options: {
         tabBarIcon: ({ focused , size}) => (
           <View>
