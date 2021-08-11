@@ -95,15 +95,15 @@ const ICONS = [
     },
     {
         icon: require('../assets/history.png'),
-        name: 'OPD',
+        name: 'History',
     },
     {
         icon: require('../assets/checkup.png'),
-        name: 'OPD',
+        name: 'Check up ',
     },
     {
         icon: require('../assets/payment.png'),
-        name: 'OPD',
+        name: 'Payment',
     },
 
 ];
@@ -135,18 +135,24 @@ const renderItem = ({ item }) => (
                 <Image style={styles.entryImg} source={item.source} />
             </View>
         </View>
-        <View style={{ flexDirection:'row',height: 100, backgroundColor: 'white', justifyContent:'space-evenly', alignItems:'center' }}>
-              {
-                  ICONS.map((item, index)=>{
-                      return(
-                          <View key={index}>
-                              <Image style={{height:50, width:50}} source={item.icon}/>
-                              <Text style={{textAlign:'center'}}>{item.name}</Text>
-                          </View>
-                      )
-                  })
-              }
-              <Text style={{fontSize:18, fontWeight:'bold'}}>Rs.1500</Text>
+        <View style={styles.item2}>
+            {
+                ICONS.map((item, index) => {
+                    return (
+                        <View key={index} style={{flexDirection:'row', alignItems:'center'}}>
+                            <View>
+                            <Image style={{ height: 50, width: 50 }} source={item.icon} />
+                            <Text style={{ textAlign: 'center', marginVertical:2 }}>{item.name}</Text>
+                            </View>
+                            { (index !== 3) ?
+                            <View style={{backgroundColor:'black', height:2, width:80, marginHorizontal:5}}/> :
+                            <View style={{width:50}}/>
+                             }
+                        </View>
+                    )
+                })
+            }
+            <Text style={styles.item2Txt}>Rs.1500</Text>
         </View>
     </View>
 );
@@ -165,7 +171,7 @@ export default function Schedual() {
                 {
                     ENQUIRIES_FIELDS.map((val, index) => {
                         return (
-                            <View key={index} style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                            <View key={index} style={styles.fieldCont}>
                                 <Text style={styles.firstContTxt}>{val}</Text>
                             </View>
                         )
@@ -230,7 +236,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
         margin: 3,
         paddingVertical: 5,
-        marginVertical:10,
+        marginVertical: 10,
     },
     entryTxt: {
         //width:150
@@ -255,5 +261,21 @@ const styles = StyleSheet.create({
     searchIcon: {
         //position:'absolute',
         right: 20,
+    },
+    item2: {
+        flexDirection: 'row',
+        height: 100,
+        backgroundColor: 'white',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    item2Txt: {
+        fontSize: 18,
+        fontWeight: 'bold'
+    },
+    fieldCont: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 })
