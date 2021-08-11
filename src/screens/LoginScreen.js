@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, Platform, KeyboardAvoidingView, Image } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Platform,KeyboardAvoidingView, Image, ImageBackground } from 'react-native';
 import InputField from '../components/InputField';
 import AppButton from '../components/AppButton';
 import { colors } from '../colors';
@@ -16,13 +16,13 @@ function LoginScreen (props)  {
     const {navigation} = props;
     return (
         <View style={styles.conatiner}>
-            <KeyboardAvoidingView style={styles.conatiner}
+            <ImageBackground style={{justifyContent: "center",alignItems: "center",flex:1,height:'100%', width:'100%'}} source={require('../assets/background.png')}>
+            {/* <KeyboardAvoidingView style={styles.conatiner}
             behavior={Platform.OS === "ios" ? "padding" : "height"}
             //keyboardVerticalOffset={300}
-            >
+            > */}
             <Image source={require('../assets/logo.png')}/>
             <Text style={styles.headerTxt}>Hospital Management System</Text>
-            <View style={styles.PlaceHolder}/>
             <View style={styles.btnCont}>
                 <TouchableOpacity onPress={()=>setShowPicker(!showpicker)} style={styles.button}>
                     <Text style={styles.btnText}>{selectedValue}</Text>
@@ -44,7 +44,8 @@ function LoginScreen (props)  {
                 <InputField style={styles.button} label="Password"/>
                 <AppButton style={styles.appBtn} textStyle={styles.textStyle} title="Login" onPress={()=>navigation.navigate('TabsScreen')}/>
             </View>
-            </KeyboardAvoidingView>
+            </ImageBackground>
+            {/* </KeyboardAvoidingView> */}
         </View>
     )
 }
@@ -53,9 +54,9 @@ function LoginScreen (props)  {
 const styles = StyleSheet.create({
     conatiner: {
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor:'#7DD394'
+        //justifyContent: "center",
+        //alignItems: "center",
+        //backgroundColor:'#7DD394'
     },
     button:{
         width:450,
