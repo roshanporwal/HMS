@@ -13,7 +13,13 @@ const ACCOUNT_TYPES = [
 function LoginScreen (props)  {
     const [selectedValue, setSelectedValue] = useState('Account Type');
     const [showpicker, setShowPicker] = useState(false);
+    const [formData, setFormData] = useState({});
     const {navigation} = props;
+
+    function fieldOnChange(data) {
+        formData[data.name] = data.value;
+        setFormData(formData);
+    }
     return (
         <View style={styles.conatiner}>
             <ImageBackground style={{justifyContent: "center",alignItems: "center",flex:1,height:'100%', width:'100%'}} source={require('../assets/background.png')}>
@@ -40,8 +46,18 @@ function LoginScreen (props)  {
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.btnText}>Location</Text>
                 </TouchableOpacity>
-                <InputField style={styles.button} label="Email"/>
-                <InputField style={styles.button} label="Password"/>
+                <InputField 
+                style={styles.button}
+                label="Email"
+                onChange={fieldOnChange}
+                name="Email"
+                />
+                <InputField 
+                style={styles.button}
+                onChange={fieldOnChange}
+                label="Password"
+                name="Password"
+                />
                 <AppButton style={styles.appBtn} textStyle={styles.textStyle} title="Login" onPress={()=>navigation.navigate('TabsScreen')}/>
             </View>
             </ImageBackground>
