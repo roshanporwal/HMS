@@ -7,12 +7,20 @@ import Appointments from '../components/Appointments';
 import CalendarPicker from 'react-native-calendar-picker';
 import Schedual from '../components/Schedual';
 
-const DATA = [
+const NAME_SET_1 = [
     "New",
     "Follow Up",
     "postoperative",
     "Proctoscopy",
 ];
+
+const NAME_SET_2 = [
+    "Cash",
+    "Card",
+    "Online",
+    "Paytm",
+]
+
 function OpdScreen() {
     return (
         <View style={styles.conatiner}>
@@ -36,7 +44,7 @@ function OpdScreen() {
                     <ScrollView>
                         <View style={styles.fourthCont}>
                             {
-                                DATA.map((name, index) => {
+                                NAME_SET_1.map((name, index) => {
                                     return (
                                         <View key={index} style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
 
@@ -44,7 +52,7 @@ function OpdScreen() {
                                                 <Text style={{ fontSize: 18 }}>{name}</Text>
                                             </TouchableOpacity>
                                             <TouchableOpacity style={{ flex: 1, height: 35, borderWidth: 1, justifyContent: 'center', borderRadius: 5, margin: 5, alignItems: 'center' }}>
-                                                <Text style={{ fontSize: 18 }}>{name}</Text>
+                                                <Text style={{ fontSize: 18 }}>1235</Text>
                                             </TouchableOpacity>
 
                                         </View>
@@ -62,17 +70,15 @@ function OpdScreen() {
                         </View>
                         <View style={styles.fifthCont}>
                             {
-                                DATA.map((name, index) => {
+                                NAME_SET_2.map((name, index) => {
                                     return (
                                         <View key={index} style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-
                                             <TouchableOpacity style={{ flex: 1, height: 35, borderWidth: 1, justifyContent: 'center', alignItems: 'center', borderRadius: 5, margin: 5 }}>
                                                 <Text style={{ fontSize: 18 }}>{name}</Text>
                                             </TouchableOpacity>
                                             <TouchableOpacity style={{ flex: 1, height: 35, borderWidth: 1, justifyContent: 'center', borderRadius: 5, margin: 5, alignItems: 'center' }}>
-                                                <Text style={{ fontSize: 18 }}>{name}</Text>
+                                                <Text style={{ fontSize: 18 }}>3256</Text>
                                             </TouchableOpacity>
-
                                         </View>
                                     )
                                 })
